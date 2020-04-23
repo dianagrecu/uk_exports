@@ -1,0 +1,493 @@
+unikraft/lib/fdt/include/libfdt.h:int fdt_next_node(const void *fdt, int offset, int *depth);
+unikraft/lib/fdt/include/libfdt.h:int fdt_check_header(const void *fdt);
+unikraft/lib/fdt/include/libfdt.h:int fdt_move(const void *fdt, void *buf, int bufsize);
+unikraft/lib/fdt/include/libfdt.h:const char *fdt_string(const void *fdt, int stroffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_num_mem_rsv(const void *fdt);
+unikraft/lib/fdt/include/libfdt.h:int fdt_get_mem_rsv(const void *fdt, int n, uint64_t *address, uint64_t *size);
+unikraft/lib/fdt/include/libfdt.h:int fdt_subnode_offset_namelen(const void *fdt, int parentoffset, const char *name, int namelen);
+unikraft/lib/fdt/include/libfdt.h:int fdt_subnode_offset(const void *fdt, int parentoffset, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_path_offset_namelen(const void *fdt, const char *path, int namelen);
+unikraft/lib/fdt/include/libfdt.h:int fdt_path_offset(const void *fdt, const char *path);
+unikraft/lib/fdt/include/libfdt.h:const char *fdt_get_name(const void *fdt, int nodeoffset, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:const struct fdt_property *fdt_get_property_namelen(const void *fdt, int nodeoffset, const char *name, int namelen, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:const struct fdt_property *fdt_get_property(const void *fdt, int nodeoffset, const char *name, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:const void *fdt_getprop_namelen(const void *fdt, int nodeoffset, const char *name, int namelen, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:const void *fdt_getprop(const void *fdt, int nodeoffset, const char *name, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:uint32_t fdt_get_phandle(const void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:const char *fdt_get_alias_namelen(const void *fdt, const char *name, int namelen);
+unikraft/lib/fdt/include/libfdt.h:const char *fdt_get_alias(const void *fdt, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_get_path(const void *fdt, int nodeoffset, char *buf, int buflen);
+unikraft/lib/fdt/include/libfdt.h:int fdt_supernode_atdepth_offset(const void *fdt, int nodeoffset, int supernodedepth, int *nodedepth);
+unikraft/lib/fdt/include/libfdt.h:int fdt_node_depth(const void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_parent_offset(const void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_node_offset_by_prop_value(const void *fdt, int startoffset, const char *propname, const void *propval, int proplen);
+unikraft/lib/fdt/include/libfdt.h:int fdt_node_offset_by_phandle(const void *fdt, uint32_t phandle);
+unikraft/lib/fdt/include/libfdt.h:int fdt_node_check_compatible(const void *fdt, int nodeoffset, const char *compatible);
+unikraft/lib/fdt/include/libfdt.h:int fdt_node_offset_by_compatible(const void *fdt, int startoffset, const char *compatible);
+unikraft/lib/fdt/include/libfdt.h:int fdt_setprop_inplace(void *fdt, int nodeoffset, const char *name, const void *val, int len);
+unikraft/lib/fdt/include/libfdt.h:int fdt_nop_property(void *fdt, int nodeoffset, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_nop_node(void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_create(void *buf, int bufsize);
+unikraft/lib/fdt/include/libfdt.h:int fdt_add_reservemap_entry(void *fdt, uint64_t addr, uint64_t size);
+unikraft/lib/fdt/include/libfdt.h:int fdt_finish_reservemap(void *fdt);
+unikraft/lib/fdt/include/libfdt.h:int fdt_begin_node(void *fdt, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_property(void *fdt, const char *name, const void *val, int len);
+unikraft/lib/fdt/include/libfdt.h:int fdt_end_node(void *fdt);
+unikraft/lib/fdt/include/libfdt.h:int fdt_finish(void *fdt);
+unikraft/lib/fdt/include/libfdt.h:int fdt_open_into(const void *fdt, void *buf, int bufsize);
+unikraft/lib/fdt/include/libfdt.h:int fdt_pack(void *fdt);
+unikraft/lib/fdt/include/libfdt.h:int fdt_add_mem_rsv(void *fdt, uint64_t address, uint64_t size);
+unikraft/lib/fdt/include/libfdt.h:int fdt_del_mem_rsv(void *fdt, int n);
+unikraft/lib/fdt/include/libfdt.h:int fdt_set_name(void *fdt, int nodeoffset, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_setprop(void *fdt, int nodeoffset, const char *name, const void *val, int len);
+unikraft/lib/fdt/include/libfdt.h:int fdt_delprop(void *fdt, int nodeoffset, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_add_subnode_namelen(void *fdt, int parentoffset, const char *name, int namelen);
+unikraft/lib/fdt/include/libfdt.h:int fdt_add_subnode(void *fdt, int parentoffset, const char *name);
+unikraft/lib/fdt/include/libfdt.h:int fdt_del_node(void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:const char *fdt_strerror(int errval);
+unikraft/lib/fdt/include/libfdt.h:const void *fdt_offset_ptr(const void *fdt, int offset, unsigned int checklen);
+unikraft/lib/fdt/include/libfdt.h:uint32_t fdt_next_tag(const void *fdt, int offset, int *nextoffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_appendprop(void *fdt, int nodeoffset, const char *name,
+unikraft/lib/fdt/include/libfdt.h:int fdt_create_empty_tree(void *buf, int bufsize);
+unikraft/lib/fdt/include/libfdt.h:int fdt_first_property_offset(const void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:const struct fdt_property *fdt_get_property_by_offset(const void *fdt, int offset, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:const void *fdt_getprop_by_offset(const void *fdt, int offset, const char **namep, int *lenp);
+unikraft/lib/fdt/include/libfdt.h:int fdt_next_property_offset(const void *fdt, int offset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_first_subnode(const void *fdt, int offset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_next_subnode(const void *fdt, int offset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_address_cells(const void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_size_cells(const void *fdt, int nodeoffset);
+unikraft/lib/fdt/include/libfdt.h:int fdt_stringlist_contains(const char *strlist, int listlen, const char *str);
+unikraft/lib/fdt/include/libfdt.h:int fdt_resize(void *fdt, void *buf, int bufsize);
+unikraft/lib/fdt/include/libfdt.h:int fdt_overlay_apply(void *fdt, void *fdto);
+unikraft/lib/fdt/include/libfdt.h:int fdt_getprop_u32_by_offset(const void *fdt, int nodeoffset, const char *name, uint32_t *out);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_count(void *buf, size_t len);
+unikraft/lib/uksglist/include/uk/sglist.h:struct uk_sglist *uk_sglist_alloc(struct uk_alloc *a, int nsegs);
+unikraft/lib/uksglist/include/uk/sglist.h:void uk_sglist_free(struct uk_sglist *sg, struct uk_alloc *a);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_append(struct uk_sglist *sg, void *buf, size_t len);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_append_sglist(struct uk_sglist *sg, const struct uk_sglist *source, size_t offset, size_t length);
+unikraft/lib/uksglist/include/uk/sglist.h:struct uk_sglist *uk_sglist_build(struct uk_alloc *a, void *buf, size_t len);
+unikraft/lib/uksglist/include/uk/sglist.h:struct uk_sglist *uk_sglist_clone(struct uk_sglist *sg, struct uk_alloc *a);
+unikraft/lib/uksglist/include/uk/sglist.h:size_t uk_sglist_length(struct uk_sglist *sg);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_split(struct uk_sglist *original, struct uk_sglist **head, struct uk_alloc *a, size_t length);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_join(struct uk_sglist *first, struct uk_sglist *second);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_slice(struct uk_sglist *original, struct uk_sglist **slice, struct uk_alloc *a, size_t offset, size_t length);
+unikraft/lib/uksglist/include/uk/sglist.h:int uk_sglist_append_netbuf(struct uk_sglist *sg, struct uk_netbuf *netbuf);
+unikraft/lib/ukbus/include/uk/bus.h:unsigned int uk_bus_count(void);
+unikraft/lib/ukbus/include/uk/bus.h:void _uk_bus_register(struct uk_bus *b);
+unikraft/lib/ukbus/include/uk/bus.h:void _uk_bus_unregister(struct uk_bus *b);
+// check here for: uk_bus_list: NOT FOUND
+unikraft/lib/ukblkdev/include/uk/blkdev_driver.h:int uk_blkdev_drv_register(struct uk_blkdev *dev, struct uk_alloc *a, const char *drv_name);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:unsigned int uk_blkdev_count(void);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:struct uk_blkdev *uk_blkdev_get(unsigned int id);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:uint16_t uk_blkdev_id_get(struct uk_blkdev *dev);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:const char *uk_blkdev_drv_name_get(struct uk_blkdev *dev);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:enum uk_blkdev_state uk_blkdev_state_get(struct uk_blkdev *dev);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_get_info(struct uk_blkdev *dev, struct uk_blkdev_info *dev_info);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_configure(struct uk_blkdev *dev, const struct uk_blkdev_conf *conf);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_queue_get_info(struct uk_blkdev *dev, uint16_t queue_id, struct uk_blkdev_queue_info *q_info);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_queue_configure(struct uk_blkdev *dev, uint16_t queue_id, uint16_t nb_desc, const struct uk_blkdev_queue_conf *queue_conf);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_start(struct uk_blkdev *dev);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_queue_submit_one(struct uk_blkdev *dev, uint16_t queue_id, struct uk_blkreq *req);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_queue_finish_reqs(struct uk_blkdev *dev, uint16_t queue_id);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_sync_io(struct uk_blkdev *dev, uint16_t queue_id, enum uk_blkreq_op op, __sector sector, __sector nb_sectors, void *buf);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_stop(struct uk_blkdev *dev);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_queue_release(struct uk_blkdev *dev, uint16_t queue_id);
+unikraft/lib/ukblkdev/include/uk/blkdev_driver.h:void uk_blkdev_drv_unregister(struct uk_blkdev *dev);
+unikraft/lib/ukblkdev/include/uk/blkdev.h:int uk_blkdev_unconfigure(struct uk_blkdev *dev);
+unikraft/lib/uksched/include/uk/sched.h:struct uk_sched *uk_sched_default_init(struct uk_alloc *a);
+unikraft/lib/uksched/include/uk/sched.h:int uk_sched_register(struct uk_sched *s);
+unikraft/lib/uksched/include/uk/sched.h:struct uk_sched *uk_sched_get_default(void);
+unikraft/lib/uksched/include/uk/sched.h:int uk_sched_set_default(struct uk_sched *s);
+unikraft/lib/uksched/include/uk/sched.h:struct uk_sched *uk_sched_create(struct uk_alloc *a, size_t prv_size);
+unikraft/lib/uksched/include/uk/sched.h:void uk_sched_start(struct uk_sched *sched) __noreturn;
+unikraft/lib/uksched/include/uk/sched.h:void uk_sched_idle_init(struct uk_sched *sched, void *stack, void (*function)(void *));
+unikraft/lib/uksched/include/uk/sched.h:struct uk_thread *uk_sched_thread_create(struct uk_sched *sched, const char *name, const uk_thread_attr_t *attr, void (*function)(void *), void *arg);
+unikraft/lib/uksched/include/uk/sched.h:void uk_sched_thread_destroy(struct uk_sched *sched, struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/sched.h:void uk_sched_thread_kill(struct uk_sched *sched, struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/sched.h:void uk_sched_thread_sleep(__nsec nsec);
+unikraft/lib/uksched/include/uk/sched.h:void uk_sched_thread_exit(void) __noreturn;
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_init(struct uk_thread *thread, struct ukplat_ctx_callbacks *cbs, struct uk_alloc *allocator, const char *name, void *stack, void *tls, void (*function)(void *), void *arg);
+unikraft/lib/uksched/include/uk/thread.h:void uk_thread_fini(struct uk_thread *thread, struct uk_alloc *allocator);
+unikraft/lib/uksched/include/uk/thread.h:void uk_thread_exit(struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_wait(struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_detach(struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_set_prio(struct uk_thread *thread, prio_t prio);
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_get_prio(const struct uk_thread *thread, prio_t *prio);
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_set_timeslice(struct uk_thread *thread, int timeslice);
+unikraft/lib/uksched/include/uk/thread.h:int uk_thread_get_timeslice(const struct uk_thread *thread, int *timeslice);
+unikraft/lib/uksched/include/uk/thread.h:void uk_thread_block_timeout(struct uk_thread *thread, __nsec nsec);
+unikraft/lib/uksched/include/uk/thread.h:void uk_thread_block(struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/thread.h:void uk_thread_wake(struct uk_thread *thread);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_init(uk_thread_attr_t *attr);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_fini(uk_thread_attr_t *attr);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_set_detachstate(uk_thread_attr_t *attr, int state);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_get_detachstate(const uk_thread_attr_t *attr, int *state);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_set_prio(uk_thread_attr_t *attr, prio_t prio);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_get_prio(const uk_thread_attr_t *attr, prio_t *prio);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_set_timeslice(uk_thread_attr_t *attr, __nsec timeslice);
+unikraft/lib/uksched/include/uk/thread_attr.h:int uk_thread_attr_get_timeslice(const uk_thread_attr_t *attr, __nsec *timeslice);
+// check for: __getreentuk_schedcoop_init: NOT FOUND
+unikraft/lib/ukargparse/include/uk/argparse.h:int uk_argnparse(char *argb, __sz maxlen, char *argv[], int maxcount);
+libs/newlib/include/sys/mman.h:void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
+libs/newlib/include/sys/mman.h:int munmap(void *addr, size_t length);
+libs/newlib/include/sys/mman.h:void *mremap(void *old_address, size_t old_size, size_t new_size, int flags, ... /* void *new_address */);
+unikraft/include/uk/plat/bootstrap.h:void ukplat_entry_argp(char *arg0, char *argb, __sz argb_len) __noreturn;
+unikraft/include/uk/plat/bootstrap.h:void ukplat_entry(int argc, char *argv[]) __noreturn;
+// check for: main
+unikraft/lib/ukboot/include/uk/version.h:void uk_version(void);
+unikraft/lib/uklock/include/uk/semaphore.h:void uk_semaphore_init(struct uk_semaphore *s, long count);
+unikraft/lib/uklock/include/uk/mutex.h:void uk_mutex_init(struct uk_mutex *m);
+unikraft/lib/vfscore/include/vfscore/file.h:int vfscore_alloc_fd(void);
+unikraft/lib/vfscore/include/vfscore/file.h:int vfscore_put_fd(int fd);
+unikraft/lib/vfscore/include/vfscore/file.h:int vfscore_install_fd(int fd, struct vfscore_file *file);
+unikraft/lib/vfscore/include/vfscore/file.h:struct vfscore_file *vfscore_get_file(int fd);
+unikraft/lib/vfscore/include/vfscore/file.h:void vfscore_put_file(struct vfscore_file *file);
+unikraft/lib/nolibc/include/sys/mount.h:int mount(const char *dev, const char *dir, const char *fsname, unsigned long flags, const void *data);
+unikraft/lib/vfscore/include/vfscore/mount.h:int vfscore_nullop(void);
+unikraft/lib/vfscore/include/vfscore/mount.h:void vfscore_release_mp_dentries(struct mount *mp);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vfscore_vget(struct mount *, uint64_t ino, struct vnode **vpp);
+unikraft/lib/vfscore/include/vfscore/uio.h:int vfscore_uiomove(void *cp, int n, struct uio *uio);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vfscore_vop_nullop(void);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vfscore_vop_einval(void);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vfscore_vop_eperm(void);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vfscore_vop_erofs(void);
+unikraft/lib/nolibc/include/fcntl.h:int open(const char *, int, ...);
+unikraft/lib/nolibc/include/fcntl.h:int creat(const char *, mode_t);
+unikraft/lib/nolibc/include/unistd.h:ssize_t write(int fd, const void *buf, size_t count);
+// check for: uk_syscall_e_write: NOT FOUND
+// check for: uk_syscall_r_write: NOT FOUND
+unikraft/lib/nolibc/include/unistd.h:int close(int fd);
+unikraft/lib/nolibc/include/unistd.h:ssize_t read(int fd, void *buf, size_t count);
+// cf: uk_syscall_e_read: NOT FOUND
+// cf: uk_syscall_r_read: NOT FOUND
+unikraft/lib/nolibc/include/sys/stat.h:int mkdir(const char *, mode_t);
+unikraft/lib/nolibc/include/unistd.h:int fsync(int fd);
+unikraft/lib/nolibc/include/sys/stat.h:int fstat(int, struct stat *);
+// cf: uk_syscall_e_fstat: NOT FOUND
+// cf: uk_syscall_r_fstat: NOT FOUND
+unikraft/lib/nolibc/include/sys/file.h:int flock(int, int);
+unikraft/lib/vfscore/include/vfscore/file.h:void fhold(struct vfscore_file* fp);
+unikraft/lib/vfscore/include/vfscore/file.h:int fdrop(struct vfscore_file* fp);
+unikraft/lib/vfscore/vfs.h:int fget(int fd, struct vfscore_file **out_fp);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int ftruncate(int fd, off_t length);
+unikraft/lib/nolibc/include/sys/stat.h:int stat(const char *__restrict, struct stat *__restrict);
+unikraft/lib/nolibc/include/sys/stat.h:int chmod(const char *, mode_t);
+unikraft/lib/nolibc/include/sys/stat.h:int fchmod(int, mode_t);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int fchown(int fd, uid_t owner, gid_t group);
+unikraft/lib/nolibc/include/unistd.h:int dup(int oldfd);
+unikraft/lib/nolibc/include/unistd.h:int dup2(int oldfd, int newfd);
+unikraft/lib/nolibc/include/unistd.h:int dup3(int oldfd, int newfd, int flags);
+unikraft/lib/vfscore/vfs.h:void sync(void); unikraft/lib/nolibc/include/unistd.h:void sync(void);
+unikraft/lib/vfscore/vfs.h:void vfscore_mount_dump(void);
+unikraft/lib/nolibc/include/sys/mount.h:int umount(const char *path);
+unikraft/lib/nolibc/include/sys/mount.h:int umount2(const char *path, int flags);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int link(const char *oldpath, const char *newpath);
+unikraft/lib/nolibc/include/unistd.h:int unlink(const char *pathname);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:char *getcwd(char *buf, size_t size);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int chown(const char *pathname, uid_t owner, gid_t group);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int chroot(const char *path);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int chdir(const char *path);
+unikraft/lib/nolibc/include/sys/stat.h:int fstatat(int, const char *__restrict, struct stat *__restrict, int);
+unikraft/lib/nolibc/include/sys/statfs.h:int statfs(const char *path, struct statfs *buf);
+unikraft/lib/nolibc/include/sys/stat.h:int lstat(const char *__restrict, struct stat *__restrict);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int lchown(const char *pathname, uid_t owner, gid_t group);
+unikraft/lib/nolibc/include/fcntl.h:int openat(int, const char *, int, ...);
+libs/newlib/include/dirent.h:DIR *opendir(const char *name);
+unikraft/lib/nolibc/include/dirent.h:struct dirent *readdir(DIR *);
+unikraft/lib/nolibc/include/dirent.h:int readdir_r(DIR *__restrict, struct dirent *__restrict, struct dirent **__restrict);
+** unikraft/lib/vfscore/main.c:struct dirent *readdir64(DIR *dir) __attribute__((alias("readdir")));
+unikraft/lib/nolibc/include/dirent.h:int closedir(DIR *);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:ssize_t pread(int fd, void *buf, size_t count, off_t offset);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:ssize_t pwrite(int fd, const void *buf, size_t count, off_t offset);
+unikraft/lib/nolibc/include/sys/uio.h:ssize_t pwritev(int fd, const struct iovec *iov, int iovcnt, off_t offset);
+unikraft/lib/nolibc/include/sys/uio.h:ssize_t readv(int fd, const struct iovec *iov, int iovcnt);
+// cf: uk_syscall_e_readv: NOT FOUND
+// cf: uk_syscall_r_readv: NOT FOUND
+unikraft/lib/nolibc/include/sys/uio.h:ssize_t writev(int fd, const struct iovec *iov, int iovcnt);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int truncate(const char *path, off_t );
+unikraft/lib/nolibc/include/sys/stat.h:int mknod(const char *, mode_t, dev_t);
+unikraft/lib/nolibc/include/sys/uio.h:ssize_t preadv(int fd, const struct iovec *iov, int iovcnt, off_t offset);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/linux/sys/ioctl.h:int ioctl(int fd,int request,...);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int fdatasync(int fd);
+unikraft/lib/nolibc/include/dirent.h:DIR           *fdopendir(int);
+unikraft/lib/nolibc/include/dirent.h:int dirfd(DIR *);
+unikraft/lib/nolibc/include/dirent.h:void rewinddir(DIR *);
+unikraft/lib/nolibc/include/dirent.h:long telldir(DIR *);
+unikraft/lib/nolibc/include/dirent.h:void seekdir(DIR *, long);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int rmdir(const char *pathname);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int fchdir(int fd);
+** apps/helloworld/build/libnewlibc/origin/newlib-2.5.0.20170922/newlib/libc/sys/phoenix/sys/unistd.h:int symlink(const char *target, const char *linkpath);
+// cf: statvfs
+// cf: fstatvfs
+// cf: access
+// cf: faccessat
+// cf: readlink
+// cf: uk_syscall_e_readlink
+// cf: uk_syscall_r_readlink
+unikraft/lib/nolibc/include/fcntl.h:int fallocate(int, int, off_t, off_t);
+unikraft/lib/nolibc/include/unistd.h:off_t lseek(int fd, off_t offset, int whence);
+// cf: uk_syscall_e_writev
+// cf: uk_syscall_r_writev
+unikraft/lib/nolibc/include/sys/stat.h:mode_t umask(mode_t);
+unikraft/lib/vfscore/include/vfscore/dentry.h:struct dentry *dentry_alloc(struct dentry *parent_dp, struct vnode *vp, const char *path);
+unikraft/lib/vfscore/vfs.h:void dentry_init(void);
+unikraft/lib/vfscore/include/vfscore/dentry.h:struct dentry *dentry_lookup(struct mount *mp, char *path);
+unikraft/lib/vfscore/include/vfscore/dentry.h:void dentry_move(struct dentry *dp, struct dentry *parent_dp, char *path);
+unikraft/lib/vfscore/include/vfscore/dentry.h:void dentry_remove(struct dentry *dp);
+unikraft/lib/vfscore/include/vfscore/dentry.h:void drele(struct dentry *dp);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vrele(struct vnode *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vput(struct vnode *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vref(struct vnode *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vflush(struct mount *);
+unikraft/lib/vfscore/include/vfscore/dentry.h:void dref(struct dentry *dp);
+unikraft/lib/nolibc/include/fcntl.h:int fcntl(int, int, ...);
+unikraft/lib/nolibc/include/dirent.h:int readdir_r(DIR *__restrict, struct dirent *__restrict, struct dirent **__restrict);
+// cf: readdir64_r
+unikraft/lib/nolibc/include/sys/statfs.h:int fstatfs(int fd, struct statfs *buf);
+// cf: eaccess
+// cf: euidaccess
+// cf: rename
+// cf: __xmknod
+// cf: __xstat
+// cf: __lxstat
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vn_access(struct vnode *, int);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vn_add_name(struct vnode *, struct dentry *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vn_del_name(struct vnode *, struct dentry *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vn_lock(struct vnode *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:struct vnode *vn_lookup(struct mount *, uint64_t);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vn_setmode(struct vnode *, mode_t mode);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vn_settimes(struct vnode *, struct timespec[2]);
+unikraft/lib/vfscore/include/vfscore/vnode.h:int vn_stat(struct vnode *, struct stat *);
+unikraft/lib/vfscore/include/vfscore/vnode.h:void vn_unlock(struct vnode *);
+unikraft/lib/vfscore/include/vfscore/mount.h:void vfs_busy(struct mount *mp);
+// cf: pipe
+// cf: pipe2
+unikraft/lib/nolibc/include/sys/stat.h:int mkfifo(const char *, mode_t);
+unikraft/lib/uktime/musl-imported/include/sys/time.h:int futimes(int, const struct timeval [2]);
+unikraft/lib/uktime/musl-imported/include/sys/time.h:int futimesat(int, const char *, const struct timeval [2]);
+unikraft/lib/nolibc/include/sys/stat.h:int utimensat(int, const char *, const struct timespec [2], int);
+unikraft/lib/nolibc/include/sys/stat.h:int futimens(int, const struct timespec [2]);
+// cf : utimes
+unikraft/lib/uktime/musl-imported/include/sys/time.h:int lutimes(const char *, const struct timeval [2]);
+unikraft/lib/nolibc/include/fcntl.h:int posix_fadvise(int, off_t, off_t, int);
+unikraft/lib/nolibc/include/dirent.h:int scandir(const char *, struct dirent ***, int (*)(const struct dirent *), int (*)(const struct dirent **, const struct dirent **));
+unikraft/lib/uklibparam/include/uk/libparam.h:int uk_libparam_parse(const char *progname, int argc, char **argv);
+unikraft/lib/uklibparam/include/uk/libparam.h:void _uk_libparam_lib_add(struct uk_lib_section *lib_sec);
+unikraft/lib/ukmpi/include/uk/mbox.h:struct uk_mbox *uk_mbox_create(struct uk_alloc *a, size_t size);
+unikraft/lib/ukmpi/include/uk/mbox.h:void uk_mbox_free(struct uk_alloc *a, struct uk_mbox *m);
+unikraft/lib/ukmpi/include/uk/mbox.h:void uk_mbox_post(struct uk_mbox *m, void *msg);
+unikraft/lib/ukmpi/include/uk/mbox.h:int uk_mbox_post_try(struct uk_mbox *m, void *msg);
+// cf: uk_mbox_post_to
+unikraft/lib/ukmpi/include/uk/mbox.h:void uk_mbox_recv(struct uk_mbox *m, void **msg);
+unikraft/lib/ukmpi/include/uk/mbox.h:int uk_mbox_recv_try(struct uk_mbox *m, void **msg);
+// cf: uk_mbox_recv_to
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:int uk_alloc_register(struct uk_alloc *a);
+unikraft/lib/ukalloc/include/uk/alloc.h:struct uk_alloc *uk_alloc_get_default(void);
+unikraft/lib/ukalloc/include/uk/alloc.h:int uk_alloc_set_default(struct uk_alloc *a);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void *uk_malloc_ifpages(struct uk_alloc *a, size_t size);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void uk_free_ifpages(struct uk_alloc *a, void *ptr);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void *uk_realloc_ifpages(struct uk_alloc *a, void *ptr, size_t size);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:int uk_posix_memalign_ifpages(struct uk_alloc *a, void **memptr, size_t align, size_t size);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void *uk_calloc_compat(struct uk_alloc *a, size_t num, size_t len);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void *uk_memalign_compat(struct uk_alloc *a, size_t align, size_t len);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void *uk_realloc_compat(struct uk_alloc *a, void *ptr, size_t size);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void *uk_palloc_compat(struct uk_alloc *a, unsigned long num_pages);
+unikraft/lib/ukalloc/include/uk/alloc_impl.h:void uk_pfree_compat(struct uk_alloc *a, void *ptr, unsigned long num_pages);
+unikraft/lib/posix-libdl/include/dlfcn.h:void *dlopen(const char *, int);
+unikraft/lib/posix-libdl/include/dlfcn.h:int dlclose(void *);
+unikraft/lib/posix-libdl/include/dlfcn.h:void *dlsym(void *__restrict, const char *__restrict);
+unikraft/lib/posix-libdl/include/dlfcn.h:char *dlerror(void);
+unikraft/lib/posix-libdl/include/dlfcn.h:int dladdr(const void *, Dl_info *);
+// cf: dlinfo_uk_vprintd
+unikraft/lib/ukdebug/include/uk/print.h:void _uk_printd(const char *libname, const char *srcname, unsigned int srcline, const char *fmt, ...) __printf(4, 5);
+unikraft/lib/ukdebug/include/uk/print.h:void _uk_vprintk(int lvl, const char *libname, const char *srcname, unsigned int srcline, const char *fmt, va_list ap);
+unikraft/lib/ukdebug/include/uk/print.h:void _uk_printk(int lvl, const char *libname, const char *srcname, unsigned int srcline, const char *fmt, ...) __printf(5, 6);
+unikraft/lib/ukdebug/include/uk/hexdump.h:int uk_hexdumpsn(char *str, size_t size, const void *data, size_t len, size_t addr0, int flags, unsigned int grps_per_line, const char *line_prefix);
+unikraft/lib/ukdebug/include/uk/hexdump.h:int uk_hexdumpf(FILE *fp, const void *data, size_t len, size_t addr0, int flags, unsigned int grps_per_line, const char *line_prefix);
+// cf: unikraft/lib/ukdebug/include/uk/hexdump.h:static inline void uk_hexdumpd(const void *data __unused, size_t len __unused,
+unikraft/lib/ukdebug/include/uk/hexdump.h:void _uk_hexdumpd(const char *libname, const char *srcname, unsigned int srcline, const void *data, size_t len, size_t addr0, int flags, unsigned int grps_per_line, const char *line_prefix);
+unikraft/lib/ukdebug/include/uk/hexdump.h:void _uk_hexdumpk(int lvl, const char *libname, const char *srcname, unsigned int srcline, const void *data, size_t len, size_t addr0, int flags, unsigned int grps_per_line, const char *line_prefix);
+unikraft/lib/ukdebug/include/uk/asmdump.h:void _uk_asmdumpd(const char *libname, const char *srcname, unsigned int srcline, const void *instr, unsigned int instr_count);
+unikraft/lib/ukdebug/include/uk/asmdump.h:void _uk_asmdumpk(int lvl, const char *libname, const char *srcname, unsigned int srcline, const void *instr,unsigned int instr_count);
+// cf: k_trace_buffer_free
+// cf: uk_trace_buffer_writep
+// cf: clock_getres
+// cf: clock_gettime
+// cf: clock_settime
+// cf: gettimeofday
+// cf: nanosleep
+// cf: setitimer
+unikraft/lib/nolibc/include/unistd.h:unsigned int sleep(unsigned int seconds);
+unikraft/lib/uktime/musl-imported/include/time.h:time_t timegm(struct tm *);
+// cf: times
+// cf: usleep
+// cf: utime
+// cf: timer_create
+// cf: timer_delete
+// cf: timer_settime
+// cf: timer_gettime
+// cf: timer_getoverrun
+unikraft/lib/devfs/include/devfs/device.h:struct device *device_create(struct driver *drv, const char *name, int flags);
+unikraft/lib/devfs/include/devfs/device.h:int device_open(const char *name, int mode, struct device **devp);
+unikraft/lib/devfs/include/devfs/device.h:int device_close(struct device *dev);
+unikraft/lib/devfs/include/devfs/device.h:int device_read(struct device *dev, struct uio *uio, int ioflags);
+unikraft/lib/devfs/include/devfs/device.h:int device_ioctl(struct device *dev, unsigned long cmd, void *arg);
+unikraft/lib/devfs/include/devfs/device.h:int device_info(struct devinfo *info);
+unikraft/lib/ukallocbbuddy/include/uk/allocbbuddy.h:struct uk_alloc *uk_allocbbuddy_init(void *base, size_t len);
+unikraft/lib/ukswrand/include/sys/random.h:ssize_t getrandom(void *buf, size_t buflen, unsigned int flags);
+// cf: uk_swrand_def
+unikraft/lib/ukswrand/include/uk/swrand.h:void uk_swrand_init_r(struct uk_swrand *r, unsigned int seedc, const __u32 seedv[]);
+// cf: uk_swrand_randr_r
+// cf: uk_swrandr_gen_seed32
+// cf: fpathconf
+// cf: sysconf
+// cf: sysinfo
+// cf: confstr
+// cf: pathconf
+// cf: getpagesize
+unikraft/lib/posix-sysinfo/include/sys/utsname.h:int uname(struct utsname *name);
+// cf: uk_syscall_e_uname
+// cf: uk_syscall_r_uname
+// cf: gethostname
+// cf: sethostname
+unikraft/lib/uknetdev/include/uk/netbuf.h:void uk_netbuf_init_indir(struct uk_netbuf *m, void *buf, size_t buflen, uint16_t headroom, void *priv, uk_netbuf_dtor_t dtor);
+unikraft/lib/uknetdev/include/uk/netbuf.h:struct uk_netbuf *uk_netbuf_alloc_indir(struct uk_alloc *a, void *buf, size_t buflen, uint16_t headroom, size_t privlen, uk_netbuf_dtor_t dtor);
+unikraft/lib/uknetdev/include/uk/netbuf.h:struct uk_netbuf *uk_netbuf_alloc_buf(struct uk_alloc *a, size_t buflen, uint16_t headroom, size_t privlen, uk_netbuf_dtor_t dtor);
+unikraft/lib/uknetdev/include/uk/netbuf.h:struct uk_netbuf *uk_netbuf_prepare_buf(void *mem, size_t size, uint16_t headroom, size_t privlen, uk_netbuf_dtor_t dtor);
+unikraft/lib/uknetdev/include/uk/netbuf.h:void uk_netbuf_free_single(struct uk_netbuf *m);
+unikraft/lib/uknetdev/include/uk/netbuf.h:void uk_netbuf_free(struct uk_netbuf *m);
+unikraft/lib/uknetdev/include/uk/netbuf.h:struct uk_netbuf *uk_netbuf_disconnect(struct uk_netbuf *m);
+unikraft/lib/uknetdev/include/uk/netbuf.h:void uk_netbuf_connect(struct uk_netbuf *headtail,  struct uk_netbuf *tail);
+unikraft/lib/uknetdev/include/uk/netbuf.h:void uk_netbuf_append(struct uk_netbuf *head, struct uk_netbuf *tail);
+unikraft/lib/uknetdev/include/uk/netdev_driver.h:int uk_netdev_drv_register(struct uk_netdev *dev, struct uk_alloc *a, const char *drv_name);
+unikraft/lib/uknetdev/include/uk/netdev.h:unsigned int uk_netdev_count(void);
+unikraft/lib/uknetdev/include/uk/netdev.h:struct uk_netdev *uk_netdev_get(unsigned int id);
+unikraft/lib/uknetdev/include/uk/netdev.h:uint16_t uk_netdev_id_get(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:const char *uk_netdev_drv_name_get(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:enum uk_netdev_state uk_netdev_state_get(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:void uk_netdev_info_get(struct uk_netdev *dev, struct uk_netdev_info *dev_info);
+unikraft/lib/uknetdev/include/uk/netdev.h:const void *uk_netdev_einfo_get(struct uk_netdev *dev, enum uk_netdev_einfo_type einfo);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_rxq_info_get(struct uk_netdev *dev, uint16_t queue_id, struct uk_netdev_queue_info *queue_info);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_txq_info_get(struct uk_netdev *dev, uint16_t queue_id, struct uk_netdev_queue_info *queue_info);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_configure(struct uk_netdev *dev, const struct uk_netdev_conf *dev_conf);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_rxq_configure(struct uk_netdev *dev, uint16_t queue_id, uint16_t nb_desc, struct uk_netdev_rxqueue_conf *rx_conf);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_txq_configure(struct uk_netdev *dev, uint16_t queue_id, uint16_t nb_desc, struct uk_netdev_txqueue_conf *tx_conf);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_start(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_hwaddr_set(struct uk_netdev *dev, const struct uk_hwaddr *hwaddr);
+unikraft/lib/uknetdev/include/uk/netdev.h:const struct uk_hwaddr *uk_netdev_hwaddr_get(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:unsigned uk_netdev_promiscuous_get(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_promiscuous_set(struct uk_netdev *dev, unsigned mode);
+unikraft/lib/uknetdev/include/uk/netdev.h:uint16_t uk_netdev_mtu_get(struct uk_netdev *dev);
+unikraft/lib/uknetdev/include/uk/netdev.h:int uk_netdev_mtu_set(struct uk_netdev *dev, uint16_t mtu);
+// cf: unikraft/lib/uknetdev/include/uk/netdev.h:static inline int uk_netdev_rxq_intr_enable(struct uk_netdev *dev,
+// cf: unikraft/lib/uknetdev/include/uk/netdev.h:static inline int uk_netdev_rxq_intr_disable(struct uk_netdev *dev,
+unikraft/lib/uk9p/include/uk/9pdev_trans.h:int uk_9pdev_trans_register(struct uk_9pdev_trans *trans);
+unikraft/lib/uk9p/include/uk/9pdev_trans.h:struct uk_9pdev_trans *uk_9pdev_trans_by_name(const char *name);
+unikraft/lib/uk9p/include/uk/9pdev_trans.h:struct uk_9pdev_trans *uk_9pdev_trans_get_default(void);
+unikraft/lib/uk9p/include/uk/9pdev_trans.h:void uk_9pdev_trans_set_default(struct uk_9pdev_trans *trans);
+unikraft/lib/uk9p/include/uk/9preq.h:void uk_9preq_get(struct uk_9preq *req);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_put(struct uk_9preq *req);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_vserialize(struct uk_9preq *req, const char *fmt, va_list vl);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_serialize(struct uk_9preq *req, const char *fmt, ...);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_vdeserialize(struct uk_9preq *req, const char *fmt, va_list vl);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_deserialize(struct uk_9preq *req, const char *fmt, ...);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_copy_to(struct uk_9preq *req, void *buf, uint32_t size);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_copy_from(struct uk_9preq *req, const void *buf, uint32_t size);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_receive_cb(struct uk_9preq *req, uint32_t recv_size);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_waitreply(struct uk_9preq *req);
+unikraft/lib/uk9p/include/uk/9preq.h:int uk_9preq_error(struct uk_9preq *req);
+unikraft/lib/uk9p/include/uk/9pdev.h:struct uk_9pdev *uk_9pdev_connect(const struct uk_9pdev_trans *trans, const char *device_identifier, const char *mount_args, struct uk_alloc *a);
+unikraft/lib/uk9p/include/uk/9pdev.h:int uk_9pdev_disconnect(struct uk_9pdev *dev);
+unikraft/lib/uk9p/include/uk/9pdev.h:int uk_9pdev_request(struct uk_9pdev *dev, struct uk_9preq *req);
+unikraft/lib/uk9p/include/uk/9pdev.h:void uk_9pdev_xmit_notify(struct uk_9pdev *dev);
+unikraft/lib/uk9p/include/uk/9pdev.h:struct uk_9preq *uk_9pdev_call(struct uk_9pdev *dev, uint8_t type, uint32_t size, const char *fmt, ...);
+unikraft/lib/uk9p/include/uk/9pdev.h:bool uk_9pdev_set_msize(struct uk_9pdev *dev, uint32_t msize);
+unikraft/lib/uk9p/include/uk/9pdev.h:uint32_t uk_9pdev_get_msize(struct uk_9pdev *dev);
+unikraft/lib/uk9p/include/uk/9pdev.h:struct uk_9preq *uk_9pdev_req_create(struct uk_9pdev *dev, uint8_t type, uint32_t size);
+unikraft/lib/uk9p/include/uk/9pdev.h:struct uk_9preq *uk_9pdev_req_lookup(struct uk_9pdev *dev, uint16_t tag);
+unikraft/lib/uk9p/include/uk/9pdev.h:int uk_9pdev_req_remove(struct uk_9pdev *dev, struct uk_9preq *req);
+unikraft/lib/uk9p/include/uk/9pdev.h:bool uk_9pdev_set_msize(struct uk_9pdev *dev, uint32_t msize);
+unikraft/lib/uk9p/include/uk/9pdev.h:uint32_t uk_9pdev_get_msize(struct uk_9pdev *dev);
+unikraft/lib/uk9p/include/uk/9pdev.h:struct uk_9pfid *uk_9pdev_fid_create(struct uk_9pdev *dev);
+unikraft/lib/uk9p/include/uk/9pfid.h:void uk_9pfid_get(struct uk_9pfid *fid);
+unikraft/lib/uk9p/include/uk/9pfid.h:int uk_9pfid_put(struct uk_9pfid *fid);
+unikraft/lib/uk9p/include/uk/9p.h:struct uk_9preq *uk_9p_version(struct uk_9pdev *dev, const char *requested, struct uk_9p_str *received);
+unikraft/lib/uk9p/include/uk/9p.h:struct uk_9pfid *uk_9p_attach(struct uk_9pdev *dev, uint32_t afid, const char *uname, const char *aname, uint32_t n_uname);
+unikraft/lib/uk9p/include/uk/9p.h:int uk_9p_flush(struct uk_9pdev *dev, uint16_t oldtag);
+unikraft/lib/uk9p/include/uk/9p.h:struct uk_9pfid *uk_9p_walk(struct uk_9pdev *dev, struct uk_9pfid *fid, const char *name);
+unikraft/lib/uk9p/include/uk/9p.h:int uk_9p_open(struct uk_9pdev *dev, struct uk_9pfid *fid, uint8_t mode);
+unikraft/lib/uk9p/include/uk/9p.h:int uk_9p_create(struct uk_9pdev *dev, struct uk_9pfid *fid, const char *name, uint32_t perm, uint8_t mode, const char *extension);
+unikraft/lib/uk9p/include/uk/9p.h:int uk_9p_remove(struct uk_9pdev *dev, struct uk_9pfid *fid);
+unikraft/lib/uk9p/include/uk/9p.h:int uk_9p_clunk(struct uk_9pdev *dev, struct uk_9pfid *fid);
+unikraft/lib/uk9p/include/uk/9p.h:int64_t uk_9p_read(struct uk_9pdev *dev, struct uk_9pfid *fid, uint64_t offset, uint32_t count, char *buf);
+unikraft/lib/uk9p/include/uk/9p.h:int64_t uk_9p_write(struct uk_9pdev *dev, struct uk_9pfid *fid, uint64_t offset, uint32_t count, const char *buf);
+unikraft/lib/uk9p/include/uk/9p.h:struct uk_9preq *uk_9p_stat(struct uk_9pdev *dev, struct uk_9pfid *fid, struct uk_9p_stat *stat);
+unikraft/lib/uk9p/include/uk/9p.h:int uk_9p_wstat(struct uk_9pdev *dev, struct uk_9pfid *fid, struct uk_9p_stat *stat);
+// cf: uktimeconv_days_in_month
+unikraft/lib/uktimeconv/include/uk/timeconv.h:int uktimeconv_is_leap_year(__s64 year);
+// cf: uktimeconv_bmkclock_to_nsec
+unikraft/lib/nolibc/include/stdio.h:int asprintf(char **str, const char *fmt, ...) __printf(2, 3);
+unikraft/lib/nolibc/include/stdio.h:int vasprintf(char **str, const char *fmt, va_list ap);
+// cf: opterr
+// cf: optind
+// cf: optopt
+// cf: optreset
+// cf: optarg
+unikraft/lib/nolibc/include/getopt.h:int getopt(int nargc, char apps cscope.files cscope.in.out cscope.out cscope.po.out export_files.txt find_defs.py func_names.txt fuzz fuzz.c get_grep_res.sh libs Makefile test.txt unikraft const *nargv, const char *options); unikraft/lib/nolibc/include/getopt.h:extern char *optarg; /bin /boot /cdrom /core /dev /dnsmasq.pid /etc /home /init /initrd.img /initrd.img.old /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /sys /tmp /usr /var /vmlinuz /vmlinuz.old getopt(3) external variables apps/ libs/ unikraft/ unikraft/lib/nolibc/include/getopt.h:extern int optreset; /bin /boot /cdrom /core /dev /dnsmasq.pid /etc /home /init /initrd.img /initrd.img.old /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /sys /tmp /usr /var /vmlinuz /vmlinuz.old getopt(3) external variable */
+unikraft/lib/nolibc/include/getopt.h:int getopt_long(int nargc, char apps cscope.files cscope.in.out cscope.out cscope.po.out export_files.txt find_defs.py func_names.txt fuzz fuzz.c get_grep_res.sh libs Makefile test.txt unikraft const *nargv, const char *options,
+unikraft/lib/nolibc/include/getopt.h:int getopt_long_only(int nargc, char apps cscope.files cscope.in.out cscope.out cscope.po.out export_files.txt find_defs.py func_names.txt fuzz fuzz.c get_grep_res.sh libs Makefile test.txt unikraft const *nargv, const char *options,
+unikraft/lib/nolibc/include/stdlib.h:void *malloc(size_t size);
+unikraft/lib/nolibc/include/stdlib.h:void *calloc(size_t nmemb, size_t size);
+unikraft/lib/nolibc/include/stdlib.h:void *realloc(void *ptr, size_t size);
+unikraft/lib/nolibc/include/stdlib.h:int posix_memalign(void **memptr, size_t align, size_t size);
+unikraft/lib/nolibc/include/stdlib.h:void *memalign(size_t align, size_t size);
+unikraft/lib/nolibc/include/stdlib.h:void free(void *ptr);
+unikraft/lib/nolibc/include/stdio.h:int vsscanf(const char *str, const char *fmt, va_list ap);
+// cf: scanf
+unikraft/lib/nolibc/include/stdio.h:int sscanf(const char *str, const char *fmt, ...) __scanf(2, 3);
+// cf: stdin
+// cf: stdout
+// cf: stderr
+unikraft/lib/nolibc/include/stdio.h:int vsnprintf(char *str, size_t size, const char *fmt, va_list ap);
+unikraft/lib/nolibc/include/stdio.h:int vsprintf(char *str, const char *fmt, va_list ap);
+unikraft/lib/nolibc/include/stdio.h:int snprintf(char *str, size_t size, const char *fmt, ...) __printf(3, 4);
+unikraft/lib/nolibc/include/stdio.h:int sprintf(char *str, const char *fmt, ...) __printf(2, 3);
+unikraft/lib/nolibc/include/stdio.h:int vfprintf(FILE *fp, const char *fmt, va_list ap);
+unikraft/lib/nolibc/include/stdio.h:int fprintf(FILE *fp, const char *fmt, ...) __printf(2, 3);
+unikraft/lib/nolibc/include/stdio.h:int vprintf(const char *fmt, va_list ap);
+unikraft/lib/nolibc/include/stdio.h:int printf(const char *fmt, ...) __printf(1, 2);
+unikraft/lib/nolibc/include/stdio.h:int fflush(FILE *fp);
+unikraft/lib/nolibc/include/stdlib.h:long strtol(const char *nptr, char **endptr, int base);
+unikraft/lib/nolibc/include/stdlib.h:unsigned long strtoul(const char *nptr, char **endptr, int base);
+unikraft/lib/nolibc/include/stdlib.h:long long strtoll(const char *nptr, char **endptr, int base);
+unikraft/lib/nolibc/include/stdlib.h:unsigned long long strtoull(const char *nptr, char **endptr, int base);
+unikraft/lib/nolibc/include/stdlib.h:int atoi(const char *s);
+unikraft/lib/nolibc/include/stdlib.h:void qsort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
+unikraft/lib/nolibc/include/string.h:void *memcpy(void *dst, const void *src, size_t len);
+unikraft/lib/nolibc/include/string.h:void *memset(void *ptr, int val, size_t len);
+unikraft/lib/nolibc/include/string.h:void *memchr(const void *ptr, int val, size_t len);
+unikraft/lib/nolibc/include/string.h:void *memrchr(const void *m, int c, size_t n);
+unikraft/lib/nolibc/include/string.h:void *memmove(void *dst, const void *src, size_t len);
+unikraft/lib/nolibc/include/string.h:int memcmp(const void *ptr1, const void *ptr2, size_t len);
+unikraft/lib/nolibc/include/string.h:size_t strnlen(const char *str, size_t maxlen);
+unikraft/lib/nolibc/include/string.h:size_t strlen(const char *str);
+unikraft/lib/nolibc/include/string.h:char *strncpy(char *dst, const char *src, size_t len);
+unikraft/lib/nolibc/include/string.h:char *strcpy(char *dst, const char *src);
+unikraft/lib/nolibc/include/string.h:char *strchr(const char *str, int c);
+unikraft/lib/nolibc/include/string.h:char *strrchr(const char *s, int c);
+unikraft/lib/nolibc/include/string.h:char *strchrnul(const char *s, int c);
+unikraft/lib/nolibc/include/string.h:int strncmp(const char *str1, const char *str2, size_t len);
+unikraft/lib/nolibc/include/string.h:int strcmp(const char *str1, const char *str2);
+unikraft/lib/nolibc/include/string.h:size_t strcspn(const char *s, const char *c);
+unikraft/lib/nolibc/include/string.h:size_t strspn(const char *s, const char *c);
+unikraft/lib/nolibc/include/string.h:char *strtok(char *restrict s, const char *restrict sep);
+unikraft/lib/nolibc/include/string.h:char *strtok_r(char *restrict s, const char *restrict sep, char **restrict p);
+unikraft/lib/nolibc/include/string.h:char *strndup(const char *str, size_t len);
+unikraft/lib/nolibc/include/string.h:char *strdup(const char *str);
+unikraft/lib/vfscore/include/vfscore/prex.h:size_t strlcpy(char *dst, const char *src, size_t siz); unikraft/lib/nolibc/include/string.h:size_t strlcpy(char *d, const char *s, size_t n);
+unikraft/lib/vfscore/include/vfscore/prex.h:size_t strlcat(char *dst, const char *src, size_t siz); unikraft/lib/nolibc/include/string.h:size_t strlcat(char *d, const char *s, size_t n);
+unikraft/lib/nolibc/include/string.h:char *strerror_r(int errnum, char *buf, size_t buflen);
+unikraft/lib/nolibc/include/string.h:char *strerror(int errnum);
+// cf: _nolibc_ctype
+unikraft/lib/nolibc/include/errno.h:extern int *_nolibc_errno(void);
